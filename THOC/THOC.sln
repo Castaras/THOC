@@ -1,12 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THOC", "THOC.csproj", "{1522CE99-BE72-FBF8-2BE7-321CDCDEFD04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THOC.Plugins", "THOC.Plugins.csproj", "{CF76623B-5617-7649-D2F4-55F868743357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THOC.Editor", "THOC.Editor.csproj", "{6199FA10-F360-8A3B-EE22-8BE26530C75F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1522CE99-BE72-FBF8-2BE7-321CDCDEFD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1522CE99-BE72-FBF8-2BE7-321CDCDEFD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1522CE99-BE72-FBF8-2BE7-321CDCDEFD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1522CE99-BE72-FBF8-2BE7-321CDCDEFD04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF76623B-5617-7649-D2F4-55F868743357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF76623B-5617-7649-D2F4-55F868743357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF76623B-5617-7649-D2F4-55F868743357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF76623B-5617-7649-D2F4-55F868743357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6199FA10-F360-8A3B-EE22-8BE26530C75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6199FA10-F360-8A3B-EE22-8BE26530C75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6199FA10-F360-8A3B-EE22-8BE26530C75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6199FA10-F360-8A3B-EE22-8BE26530C75F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
