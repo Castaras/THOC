@@ -6,19 +6,16 @@ namespace KD_Steering
     {
         #region Attributes
 
-
         // Wander circle radius
         [Tooltip("Radius of wander circle in front of character")]
         [SerializeField]
-        private float   m_WanderRadius          = 2;
+        private float   m_WanderRadius          = 5;
 
         // Wander distance
         [Tooltip("Distane between character and wander circle")]
         [SerializeField]
         private float   m_WanderDistance        = 5;
 
-        public float mapEdgex = 20;
-        public float mapEdgez = 20;
         // Wander angle
         //private float   m_WanderAngle           = 0;
 
@@ -30,12 +27,13 @@ namespace KD_Steering
         // Random point frequency
         [Tooltip("Frequency in seconds to generate a new random point")]
         [SerializeField]
-        private float   m_RandomPointFrequency  = 1000;
+        private float   m_RandomPointFrequency  = 1;
 
-        // random position
-        private Vector3 m_RandomPoint = Vector3.zero;
         // Timer
         private float   m_Timer                 = 0;
+
+        // Random point
+        private Vector3 m_RandomPoint           = Vector3.zero;
 
         // Wander circle position
         private Vector3 m_WanderCirclePosition  = Vector3.zero;
@@ -75,15 +73,6 @@ namespace KD_Steering
 
             // Update timer
             UpdateTimer();
-            if ((Mathf.Round(transform.position.x) == Mathf.Round(m_RandomPoint.x) && Mathf.Round(transform.position.z) == Mathf.Round(m_RandomPoint.z)) || (m_RandomPoint == Vector3.zero))
-            {
-                m_RandomPoint = Vector3.zero;
-                m_RandomPoint.x = Random.Range(-mapEdgex, mapEdgex);
-                m_RandomPoint.y = transform.position.y;
-                m_RandomPoint.z = Random.Range(-mapEdgez, mapEdgez);
-                //m_RandomPoint += m_WanderCirclePosition;
-                //Debug.Log("Reached" + m_RandomPoint);
-            }
         }
 
         #endregion
@@ -124,12 +113,15 @@ namespace KD_Steering
         private void UpdateTimer()
         {
             m_Timer += Time.deltaTime;
-            /*
-            if (m_Timer > m_RandomPointFrequency) {
-                Debug.Log("Currently" + transform.position);
+
+            if (m_Timer > m_RandomPointFrequency)
+            {
+                m_RandomPoint = Random.insideUnitCircle * m_WanderRadius;
+                m_RandomPoint.z = m_RandomPoint.y;
+                m_RandomPoint.y = 0;
+                m_RandomPoint += m_WanderCirclePosition;
                 m_Timer = 0;
             }
-            */
         }
 
         #endregion

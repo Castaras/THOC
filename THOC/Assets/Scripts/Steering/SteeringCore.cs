@@ -14,7 +14,6 @@ namespace KD_Steering
         // Rigidbody
         private Rigidbody m_Rigidbody = null;
 
-        
         // Current velocity
         //private Vector3 m_Velocity = Vector3.zero;
 
@@ -107,6 +106,7 @@ namespace KD_Steering
         {
             // Get rigidbody component
             m_Rigidbody = GetComponent<Rigidbody>();
+
             // Get steering behavior components
             GetSteeringBehaviors();
 

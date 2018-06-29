@@ -11,12 +11,12 @@ namespace KD_Steering
         // Minimum neighbor hood unit count
         [Tooltip("Minimum number of units in neighbor hood to consider them as a crowd")]
         [SerializeField]
-        private uint m_MinNeighborHoodUnitCount = 2;
+        private uint m_MinNeighborHoodUnitCount = 4;
 
         // Neighbor hood radius
         [Tooltip("Radius of zone detecting any crowd unit")]
         [SerializeField]
-        private float m_NeighborHoodRadius = 1;
+        private float m_NeighborHoodRadius = 6;
 
         // Draw neigbor hood wire sphere
         [SerializeField]
