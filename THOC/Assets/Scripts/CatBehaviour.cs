@@ -53,7 +53,7 @@ public class CatBehaviour : MonoBehaviour {
             isFlee = true;
         }
         if (ReachedLocation() == true) MakeRandomDestination();
-        Vector3 desiredVelocity = (randomMove - transform.position) * wanderMovementSpeed;
+        Vector3 desiredVelocity = (randomMove - transform.position).normalized * wanderMovementSpeed;
         ApplyMovementVector(desiredVelocity);
         UpdateTimerRandom();
     }
@@ -72,7 +72,7 @@ public class CatBehaviour : MonoBehaviour {
                                         listVectors.Average(x => x.y),
                                         listVectors.Average(x => x.z));
 
-            ApplyMovementVector(-averageVector * fleeMovementSpeed);
+            ApplyMovementVector(-averageVector.normalized * fleeMovementSpeed);
         }
         UpdateTimerFlee();
     }
@@ -111,6 +111,7 @@ public class CatBehaviour : MonoBehaviour {
     private void ApplyMovementVector(Vector3 movementForce)
     {
         // adjust movement
+
         c_Rigidbody.velocity += movementForce;
         
         // turn head of cat
