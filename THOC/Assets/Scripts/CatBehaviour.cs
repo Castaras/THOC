@@ -24,16 +24,16 @@ public class CatBehaviour : MonoBehaviour {
     private float timerFlee = 0;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         c_Rigidbody = GetComponent<Rigidbody>();
         wanderAnchor = transform.position;
         playerList = GameObject.FindGameObjectsWithTag("Player");
         MakeRandomDestination();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         if (isFlee == false)
         {
@@ -52,6 +52,7 @@ public class CatBehaviour : MonoBehaviour {
         {
             isFlee = true;
         }
+        if (ReachedLocation() == true) MakeRandomDestination();
         Vector3 desiredVelocity = (randomMove - transform.position) * wanderMovementSpeed;
         ApplyMovementVector(desiredVelocity);
         UpdateTimerRandom();
@@ -90,6 +91,23 @@ public class CatBehaviour : MonoBehaviour {
         }
     }
 
+    private bool ReachedLocation()
+    {
+        Vector3 currentLoc = Vector3.zero;
+        Vector3 goalLoc = Vector3.zero;
+
+        currentLoc.x = Mathf.Round(currentLoc.x);
+        currentLoc.y = 0;
+        currentLoc.z = Mathf.Round(currentLoc.z);
+
+        goalLoc.x = Mathf.Round(goalLoc.x);
+        goalLoc.y = 0;
+        goalLoc.z = Mathf.Round(goalLoc.z);
+
+        if (currentLoc == goalLoc) return true;
+
+        return false;
+    }
     private void ApplyMovementVector(Vector3 movementForce)
     {
         // adjust movement
