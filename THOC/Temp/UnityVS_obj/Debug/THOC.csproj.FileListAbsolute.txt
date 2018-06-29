@@ -1,2 +1,0 @@
-D:\Programming\THOC\THOC\Temp\UnityVS_obj\Debug\THOC.csprojResolveAssemblyReference.cache
-D:\Programming\THOC\THOC\Temp\UnityVS_obj\Debug\THOC.csproj.CoreCompileInputs.cache
